@@ -1,14 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 function GitHubCard() {
-  // Static data for UI preview
-  const userData = {
-    login: "octocat",
-    avatar_url: "https://github.com/octocat.png",
-    public_repos: 12,
-    followers: 345,
-    following: 56,
-  };
+  const [userData, setUserData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  const username = "isingizwe12"; // GitHub username
+
+  useEffect(() => {
+    const fetchGitHubUser = async () => {
+      try {
+        const response = await fetch(`https://api.github.com/users/${username}`);
+        if (!response.ok) {
+          throw new Error("User not found");
+        }
+        const data = await response.json();
+        setUserData(data);
+        setLoading(false);
+      } catch (err) {
+        setError(err.message);
+        setLoading(false);
+      }
+    };
+
+    fetchGitHubUser();
+  }, [username]);
+
+  if (loading) return <p className="p-4">Loading GitHub data...</p>;
+  if (error) return <p className="p-4 text-red-500">{error}</p>;
 
   return (
     <div className="bg-white shadow-md rounded-xl p-6 w-full max-w-sm flex flex-col items-center">
