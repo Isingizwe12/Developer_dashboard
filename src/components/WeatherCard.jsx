@@ -49,8 +49,8 @@ function WeatherCard() {
   const localTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 
   return (
-    <div className="bg-white shadow-md rounded-xl p-6 w-full max-w-sm">
-      <h2 className="text-xl font-semibold text-gray-800 mb-4">Weather</h2>
+    <div className="bg-white shadow-md rounded-xl p-6 w-full max-w-sm ">
+      <h2 className="text-xl font-semibold text-gray-800 mb-4">Current Weather</h2>
 
       <div className="flex items-center justify-between">
         <div>
