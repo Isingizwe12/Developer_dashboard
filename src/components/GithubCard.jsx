@@ -5,10 +5,10 @@ function GitHubCard() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const username = "isingizwe12"; // GitHub username
+  const username = "isingizwe12"; 
 
   useEffect(() => {
-    const fetchGitHubUser = async () => {
+    const fetchUser = async () => {
       try {
         const response = await fetch(`https://api.github.com/users/${username}`);
         if (!response.ok) {
@@ -23,10 +23,10 @@ function GitHubCard() {
       }
     };
 
-    fetchGitHubUser();
+    fetchUser();
   }, [username]);
 
-  if (loading) return <p className="p-4">Loading GitHub data...</p>;
+  if (loading) return <p className="p-4">Loading...</p>;
   if (error) return <p className="p-4 text-red-500">{error}</p>;
 
   return (
