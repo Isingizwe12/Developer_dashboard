@@ -38,14 +38,14 @@ A simple and responsive developer dashboard built with **React** and **Tailwind 
 git clone https://github.com/Isingizwe12/Developer_dashboard
 cd developer_dashboard 
 
-# Install dependencies
+### Install dependencies
 ***npm install***
 
-# Run the project
+### Run the project
 
 ***npm run dev***
 
-# Environment Variables
+### Environment Variables
 -Get your OpenWeatherMap API key from OpenWeatherMap
  and add it in WeatherCard.jsx: 
 
@@ -55,7 +55,7 @@ cd developer_dashboard
 
  const username = "YOUR_GITHUB_USERNAME";
 
- # The image preview of a simple design
+ ## The image preview of a simple design
 ![websitePreview](public/images/developer-dashboard.png)
 
 
