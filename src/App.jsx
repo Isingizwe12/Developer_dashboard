@@ -1,5 +1,5 @@
 import './App.css';
-import GitHubCard from './components/GitHubCard';
+import GitHubCard from './components/GithubCard';
 import Navbar from './components/Navbar';
 import WeatherCard from './components/WeatherCard';
 
